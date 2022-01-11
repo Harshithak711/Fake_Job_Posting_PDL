@@ -29,7 +29,7 @@ def predict():
     prediction = model.predict(final)
     output = prediction
 
-    if output == str(1):
+    if output == int(1):
         return render_template('job.html', pred='The job posting is: FAKE')
     else:
         return render_template('job.html', pred='The job posting is: LEGITIMATE')
