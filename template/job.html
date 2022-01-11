@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Fake Job Posting Prediction</title>
+  <!--<link rel="stylesheet" href="C:\Users\harsh\PycharmProjects\PDL_FakeJob\static\job.css" type="text/css">-->
+  <style>
+                          h1{
+                font-family:"Trebuchet MS";
+                text-align:center;
+                font-weight:700;
+                font-size:40px;
+                margin-top:10px;
+                margin-bottom:0px;
+                color:#800080;
+                background-color:#D8BFD8;
+              }
+              #description{
+                text-align:center;
+                font-weight:100;
+                font-size:20px;
+                font-family:Bookman;
+                background-color:#FFC0CB;
+                color:#FF1493;
+              }
+              body{
+                background-color:#FFEFD5;
+              }
+              #survey-fields{
+                text-align:center;
+                margin-left: 40%;
+                margin-right: 40%;
+                margin-top: 10px;
+                margin-bottom:10px;
+                display: grid;
+                grid-gap: 10px;
+              }
+              label{
+              text-align:center;
+              margin:10px;
+              font-family:"Gill Sans", sans-serif;
+              font-weight:400;
+               font-size:20px;
+              }
+
+              select{
+              text-align:center;
+
+              margin-top: 10px;
+              margin-bottom:10px;
+              font-family:"Gill Sans", sans-serif;
+              font-weight:400;
+              font-size:20px;
+
+              background-color:#F5F5F5
+              }
+              label, select {
+              display: inline-block;
+               vertical-align: middle;
+         }
+         #submit{
+         text-align:center;
+
+              margin-top: 10px;
+              margin-bottom:10px;
+              font-family:"Gill Sans", sans-serif;
+              font-weight:400;
+              font-size:20px;
+         }
+
+		</style>
+</head>
+  <body>
+
+  <header>
+    <section class="title-text">
+    <h1 id="title">Fake Job Posting Prediction</h1>
+    <p id="description">Check if the job posted is legit or not based on the characteristics of the post</p>
+  </section>
+</header>
+  <main>
+
+    <fieldset id="survey">
+    <section id="survey-fields">
+    <form action='/predict' method="POST" class="col s12">
+
+      <label #current>Was there any telecommunication like calls, emails, etc?</label>
+      <br>
+      <select id="telecom" name="telecom">
+      <option value="" disbabled select>Choose an option</option>
+      <option value="1">Yes</option>
+      <option value="0">No</option>
+    </select><br>
+
+      <label #current>Does the company have a logo?</label>
+      <br>
+    <select id="logo" name="logo">
+      <option value="" disbabled select>Choose an option</option>
+      <option value="1">Yes</option>
+      <option value="0">No</option>
+    </select><br>
+
+      <label #current>Does the posting contain FAQs?</label>
+      <br>
+    <select id="faq" name="faq">
+      <option value="" disbabled select>Choose an option</option>
+      <option value="1">Yes</option>
+      <option value="0">No</option>
+    </select><br>
+
+      <label #current>Choose the employment type.</label>
+      <br>
+    <select id="type" name="type">
+      <option value="" disbabled select>Choose an option</option>
+      <option value="1">Full-time</option>
+      <option value="2">Part-time</option>
+      <option value="3">Contract</option>
+      <option value="4">Temporary</option>
+      <option value="5">Other</option>
+    </select><br>
+
+      <label #current>Select the required experience expected.</label>
+      <br>
+    <select id="exp" name="exp">
+      <option value="" disbabled select>Choose an option</option>
+      <option value="1">Mid-Senior level</option>
+      <option value="2">Entry level</option>
+      <option value="3">Associate</option>
+      <option value="4">Not Applicable</option>
+      <option value="5">Executive</option>
+      <option value="6">Director</option>
+      <option value="7">Internship</option>
+    </select><br>
+
+      <label #current>Select the required education/qualification expected.</label>
+      <br>
+    <select id="edu" name="edu">
+      <option value="" disbabled select>Choose an option</option>
+      <option value="1">Bachelor's Degree</option>
+      <option value="2">Master's Degree</option>
+      <option value="3">High School or equivalent</option>
+      <option value="4">Unspecified</option>
+      <option value="5">Vocational</option>
+      <option value="6">Certification</option>
+      <option value="7">College Coursework Completion</option>
+      <option value="8">Associate Degree</option>
+      <option value="9">Professional courses</option>
+      <option value="10">Doctorate</option>
+      <option value="11">High School Coursework Completion</option>
+      <option value="12">Vocational - Degree</option>
+      <option value="13">Vocational - HS Diploma</option>
+    </select><br>
+
+      <label #current>Select the function of job that fits best.</label>
+      <br>
+    <select id="job" name="job">
+      <option value="" disbabled select>Choose an option</option>
+      <option value="1">Sales</option>
+      <option value="2">Health Care Provider</option>
+      <option value="3">Management</option>
+      <option value="4">Customer Service</option>
+      <option value="5">Information Technology</option>
+      <option value="6">Engineering</option>
+      <option value="7">Administrative</option>
+      <option value="8">Production</option>
+      <option value="9">Marketing</option>
+      <option value="10">Design</option>
+      <option value="11">Education</option>
+      <option value="12">Supply Chain</option>
+      <option value="13">Financial Analyst</option>
+      <option value="14">Human Resources</option>
+      <option value="15">Manufacturing</option>
+      <option value="16">Strategy/Planning</option>
+      <option value="17">Business Development</option>
+      <option value="18">Finance</option>
+      <option value="19">Advertising</option>
+      <option value="20">Public Relations</option>
+      <option value="21">General Business</option>
+      <option value="22">Product Management</option>
+      <option value="23">Project Management</option>
+      <option value="24">Accounting/Auditing</option>
+      <option value="25">Art/Creative</option>
+      <option value="26">Consulting</option>
+      <option value="27">Quality Assurance</option>
+      <option value="28">Data Analyst</option>
+      <option value="29">Business Analyst</option>
+      <option value="30">Writing/Editing</option>
+      <option value="31">Distribution</option>
+      <option value="32">Science</option>
+      <option value="33">Training</option>
+      <option value="34">Research</option>
+      <option value="35">Purchasing</option>
+      <option value="36">Legal</option>
+    </select><br>
+      <button type="submit" id="submit">Predict</button> <br>
+
+    <br><h4 align="center"><b>{{pred}}</b>
+</h4>
+        <br>
+    </form>
+    </section>
+    </fieldset>
+
+</main>
+
+
+  </body>
+</html>

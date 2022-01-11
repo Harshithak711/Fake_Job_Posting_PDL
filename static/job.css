@@ -1,0 +1,31 @@
+#title{
+  font-family:"Trebuchet MS";
+  text-align:center;
+  font-weight:700;
+  font-size:40px;
+  margin-top:10px;
+  margin-bottom:0px;
+  color:#800080;
+  background-color:#D8BFD8;
+}
+
+#description{
+  text-align:center;
+  font-weight:100;
+  font-size:20px;
+  font-family:Bookman;
+  background-color:#FFC0CB;
+  color:#FF1493;
+}
+body{
+  background-color:#REFFED5;
+}
+#survey-fields{
+  text-align:center;
+  margin-left: 40%;
+  margin-right: 40%;
+  margin-top: 10px;
+  margin-bottom:10px;
+  display: grid;
+  grid-gap: 10px;
+}
